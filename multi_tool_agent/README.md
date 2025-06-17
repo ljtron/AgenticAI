@@ -1,4 +1,5 @@
 # 🤖 Multi_tool_agent
+![Agent image](./miscellaneous/images/adk_article_image.png)
 
 ## 📄 Description
 Multi_tool_agent is a hands-on, extensible AI agent project built as a continuation of [Google's official Agent Development Kit (ADK)](https://google.github.io/adk-docs/get-started/quickstart/#run-your-agent) tutorial. If you're just starting to explore how modern AI agents work—especially those capable of interacting with multiple tools—this repository serves as both a guided learning experience and a launchpad for your own experiments.
@@ -50,10 +51,30 @@ adk run multi_tool_agent
 ## 🧠 Diagram
 
 > A very basic architecture or flow diagram
-> 
-![Agent Diagram](./miscellaneous/images/diagram.png)
+> ![Agent Diagram](./miscellaneous/images/diagram.png)
 
+Let's walk through what's happening behind the scenes when a user interacts with an AI agent built using the Agentic Development Kit (ADK).
 
+* User → This is you (or anyone) sending a request - like "What's the weather in Tokyo?"
+
+* ADK (Agentic Development Kit) → Think of this as the brain of the operation. It coordinates everything: managing the request, calling tools, and sending the final response.
+
+* LLM (Large Language Model) → This could be something like ChatGPT or Gemini. It analyzes what the user actually wants and figures out the next steps.
+
+* Get_Weather & Get_Current_Time → These are specialized tools (aka methods) that fetch real-world data like weather or time based on the city.
+
+🛠️ Here's how it all flows:
+1) The user sends a request, like asking for weather info.
+
+2) The ADK receives it and passes the request to the LLM.
+
+3) The LLM interprets the intent - "Ah, they want the weather in a specific city!"
+
+4) The ADK then calls the correct tool - either Get_Weather or Get_Current_Time-to fetch that info.
+
+5) Once the tool provides the result, the ADK optionally sends it back to the LLM for a more human-like response.
+
+6) Finally, the ADK delivers the polished answer back to the user.
 
 
 ## 📚 References
@@ -62,4 +83,5 @@ If you want to dive deeper into google's agentic development kit I highly recomm
 
 If you want more information on what AI agents are you can read this aritcle I wrote
 [what is agentic ai and why it matters](https://medium.com/@lamcloudjr/what-is-agentic-ai-and-why-it-matters-ecf535ec54cf).
+
 

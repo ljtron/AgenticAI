@@ -18,6 +18,9 @@ activate:
 freeze:
 	$(PIP) freeze > requirements.txt
 
+download:
+	$(PIP) install -r requirements.txt
+	
 pushReady:
 	$(freeze)
 	deactivate
